@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>gmm</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;gmm
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options">[<a href="javascript:void(0);" class="privatelink"
+    onclick="toggle_private();">hide&nbsp;private</a>]</span></td></tr>
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="gmm-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module gmm</h1><p class="nomargin-top"></p>
+<p>Created on Mar 28, 2012</p>
+
+<hr />
+<div class="fields">      <p><strong>Author:</strong>
+        kroon
+      </p>
+</div><!-- ==================== CLASSES ==================== -->
+<a name="section-Classes"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Classes</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Classes"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a href="gmm.EmptyComponentError-class.html" class="summary-name">EmptyComponentError</a><br />
+      Error when number of points associated with a GMM/K-Means component
+        reaches zero
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Functions</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Functions"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple (2-dimensional NumPy array (N x K), float)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="gmm-module.html#calcweights" class="summary-sig-name">calcweights</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">means</span>)</span><br />
+      Calculate the assignment of points to means for the current means in 
+      the K-means algorithm</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple (2-dimensional NumPy array (N x K); floating-point value)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="gmm-module.html#calcresps" class="summary-sig-name">calcresps</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">nums</span>,
+        <span class="summary-sig-arg">means</span>,
+        <span class="summary-sig-arg">covs</span>,
+        <span class="summary-sig-arg">hard</span>=<span class="summary-sig-default">True</span>)</span><br />
+      Calculate responsibilities maximizing the likelihood of the given GMM
+      parameters</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">1-dimensional NumPy array (K)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="gmm-module.html#updatenums" class="summary-sig-name">updatenums</a>(<span class="summary-sig-arg">weights</span>)</span><br />
+      Update (effective) number of points per component/mean in EM or 
+      K-means algorithm</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">2-dimensional NumPy array (d x K)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="gmm-module.html#updatemeans" class="summary-sig-name">updatemeans</a>(<span class="summary-sig-arg">weights</span>,
+        <span class="summary-sig-arg">nums</span>,
+        <span class="summary-sig-arg">data</span>)</span><br />
+      Update estimates of mean vectors in both EM and K-means algorithms</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">3-dimensional NumPy array (K x d x d)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="gmm-module.html#updatecovs" class="summary-sig-name">updatecovs</a>(<span class="summary-sig-arg">weights</span>,
+        <span class="summary-sig-arg">means</span>,
+        <span class="summary-sig-arg">nums</span>,
+        <span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">diagcov</span>=<span class="summary-sig-default">False</span>)</span><br />
+      Update estimates of covariance matrices in EM algorithm</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple (2-dimensional NumPy array (d x K), 2-dimensional NumPy array 
+      (N x K))</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="gmm-module.html#nubskmeans" class="summary-sig-name">nubskmeans</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">K</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">reps</span>=<span class="summary-sig-default">3</span>)</span><br />
+      Perform the K-means algorithm using non-uniform binary splitting 
+      (NUBS) for initialization of the means</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple (2-dimensional NumPy array (d x K), 2-dimensional NumPy array 
+      (N x K))</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="gmm-module.html#kmeans" class="summary-sig-name">kmeans</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">K</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">means</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">maxiters</span>=<span class="summary-sig-default">30</span>,
+        <span class="summary-sig-arg">rtol</span>=<span class="summary-sig-default">0.0001</span>)</span><br />
+      Perform the K-means algorithm</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple ( 1-dimensional NumPy array (K), 2-dimensional NumPy array (d x
+      K), 3-dimensional NumPy array (K x d x d, float)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="gmm-module.html#gmm" class="summary-sig-name">gmm</a>(<span class="summary-sig-arg">data</span>,
+        <span class="summary-sig-arg">weights</span>=<span class="summary-sig-default">None</span>,
+        <span class="summary-sig-arg">K</span>=<span class="summary-sig-default">1</span>,
+        <span class="summary-sig-arg">hard</span>=<span class="summary-sig-default">True</span>,
+        <span class="summary-sig-arg">diagcov</span>=<span class="summary-sig-default">False</span>,
+        <span class="summary-sig-arg">maxiters</span>=<span class="summary-sig-default">20</span>,
+        <span class="summary-sig-arg">rtol</span>=<span class="summary-sig-default">0.0001</span>)</span><br />
+      Perform parameter estimation for a Gaussian mixture model (GMM)</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr class="private">
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="_test"></a><span class="summary-sig-name">_test</span>()</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Variables</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-Variables"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__package__"></a><span class="summary-name">__package__</span> = <code title="None">None</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td colspan="2" class="table-header">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr valign="top">
+        <td align="left"><span class="table-header">Function Details</span></td>
+        <td align="right" valign="top"
+         ><span class="options">[<a href="#section-FunctionDetails"
+         class="privatelink" onclick="toggle_private();"
+         >hide private</a>]</span></td>
+      </tr>
+    </table>
+  </td>
+</tr>
+</table>
+<a name="calcweights"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calcweights</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">means</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate the assignment of points to means for the current means in 
+  the K-means algorithm</p>
+  <p>Assign each point in <code>data</code> to the closest vector in 
+  <code>means</code> and return this assignment in a matrix, using a 
+  one-hot encoding.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>data = np.array(range(20)).reshape(4,5)
+<span class="py-prompt">&gt;&gt;&gt; </span>alloc, dist = calcweights(data,  np.array([[j + 5 * i <span class="py-keyword">for</span> j <span class="py-keyword">in</span> [1.3, 2.6]] <span class="py-keyword">for</span> i <span class="py-keyword">in</span> range(4)]))
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(alloc, np.reshape(np.array(2 * [1, 0] + 3 * [0, 1]), (5, 2)), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(dist, 17.04, decimal=4)</pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> (2-dimensional NumPy array (d x N)) - Data from which parameters are being estimated</li>
+        <li><strong class="pname"><code>means</code></strong> (2-dimensional NumPy array (d x K)) - Current means in model</li>
+    </ul></dd>
+    <dt>Returns: tuple (2-dimensional NumPy array (N x K), float)</dt>
+        <dd>(one-hot encoding of calculated (point, mean) allocation, 
+          distortion for that allocation)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="calcresps"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calcresps</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">nums</span>,
+        <span class="sig-arg">means</span>,
+        <span class="sig-arg">covs</span>,
+        <span class="sig-arg">hard</span>=<span class="sig-default">True</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculate responsibilities maximizing the likelihood of the given GMM 
+  parameters</p>
+  <p>Calculate the responsibilities maximizing the likelihood of the given 
+  parameters in a GMM model.  The boolean keyword <code>hard</code> 
+  indicates whether hard or soft allocation of points to components should 
+  be performed.  In the case of hard allocation, responsibilities are 
+  constrained to be either 0 or 1, with exactly one responsibility per data
+  point set to 1.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>data = np.array([[ 0.3323902 ,  1.39952168],
+<span class="py-more">... </span>       [-3.09393968,  0.85202915],
+<span class="py-more">... </span>       [ 0.3932616 ,  4.14018981],
+<span class="py-more">... </span>       [ 2.71301182,  1.48606545],
+<span class="py-more">... </span>       [ 0.76624929,  1.48450185],
+<span class="py-more">... </span>       [-2.68682389, -2.20487651],
+<span class="py-more">... </span>       [-1.50746076, -1.3965284 ],
+<span class="py-more">... </span>       [-3.35436652, -2.70017904],
+<span class="py-more">... </span>       [ 0.62831278, -0.14266899],
+<span class="py-more">... </span>       [-3.13713063, -1.35515249]])
+<span class="py-prompt">&gt;&gt;&gt; </span>data = np.transpose(data)
+<span class="py-prompt">&gt;&gt;&gt; </span>w = np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2))
+<span class="py-prompt">&gt;&gt;&gt; </span>n = updatenums(w)
+<span class="py-prompt">&gt;&gt;&gt; </span>m = updatemeans(w, n, data)
+<span class="py-prompt">&gt;&gt;&gt; </span>c = updatecovs(w, m, n, data)
+<span class="py-prompt">&gt;&gt;&gt; </span>resps, nll = calcresps(data, n, m, c)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(resps, np.array([[1, 0], [1, 0], [1, 0], [0, 1], [1, 0], [0, 1], [0, 1], [0, 1], [0, 1], [1, 0]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(nll, 40.340684911249667, decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>resps, nll = calcresps(data, n, m, c, hard=False)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(resps, np.array([[  7.79374979e-01,   2.20625021e-01], [  9.99999900e-01,   1.00345187e-07], [  1.00000000e+00,   2.30021208e-10], [  8.22976856e-02,   9.17702314e-01], [  5.53999927e-01,   4.46000073e-01], [  3.81391842e-01,   6.18608158e-01], [  3.16978845e-01,   6.83021155e-01], [  4.10097126e-01,   5.89902874e-01], [  2.13783567e-01,   7.86216433e-01], [  8.49852402e-01,   1.50147598e-01]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(nll, 37.622423073925454, decimal=4)</pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> (2-dimensional NumPy array (d x N)) - Data from which parameters are being estimated</li>
+        <li><strong class="pname"><code>nums</code></strong> (1-dimensional NumPy array (K)) - Current effective number of points per component</li>
+        <li><strong class="pname"><code>means</code></strong> (2-dimensional NumPy array (d x K)) - Current means in model</li>
+        <li><strong class="pname"><code>covs</code></strong> (3-dimensional NumPy array (K x d x d)) - Current covariance matrices in model</li>
+        <li><strong class="pname"><code>hard</code></strong> (boolean) - Indicates whether hard or soft allocation of points to components
+          should be performed</li>
+    </ul></dd>
+    <dt>Returns: tuple (2-dimensional NumPy array (N x K); floating-point value)</dt>
+        <dd>The updated responsibilities; the negative log-likelihood 
+          associated with these responsibilities</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="updatenums"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">updatenums</span>(<span class="sig-arg">weights</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Update (effective) number of points per component/mean in EM or 
+  K-means algorithm</p>
+  <p>Update the effective number of points for each component of a GMM for 
+  <code>data</code>, given the current responsibilities. Alternatively, 
+  calculate the number of points currently allocated to each mean in the 
+  K-means algorithm. If any of the values calculated are zero, an 
+  EmptyComponentError should be raised.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>w = np.reshape(np.array(3 * [1, 0] + 2 * [0, 1]), (5, 2))
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(updatenums(w), np.array([3, 2]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>w = np.reshape(np.array(3 * [0.7, 0.3] + 2 * [0.2, 0.8]), (5, 2))
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(updatenums(w), np.array([2.5, 2.5]), decimal=4)</pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>weights</code></strong> (2-dimensional NumPy array (N x K)) - Current responsibilities in model</li>
+    </ul></dd>
+    <dt>Returns: 1-dimensional NumPy array (K)</dt>
+        <dd>The calculated numbers of points</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="updatemeans"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">updatemeans</span>(<span class="sig-arg">weights</span>,
+        <span class="sig-arg">nums</span>,
+        <span class="sig-arg">data</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Update estimates of mean vectors in both EM and K-means algorithms</p>
+  <p>Update the means in the K-means algorithms for the given allocation of
+  points to means, or update the estimated means for each component of a 
+  GMM for <code>data</code>, given the current responsibilities.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>data = np.array(range(20)).reshape(4,5)
+<span class="py-prompt">&gt;&gt;&gt; </span>w = np.reshape(np.array(3 * [1, 0] + 2 * [0, 1]), (5, 2))
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(updatemeans(w, updatenums(w), data), np.array([[j + 5 * i <span class="py-keyword">for</span> j <span class="py-keyword">in</span> [1, 3.5]] <span class="py-keyword">for</span> i <span class="py-keyword">in</span> range(4)]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>w = np.reshape(np.array(3 * [0.7, 0.3] + 2 * [0.2, 0.8]), (5, 2))
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(updatemeans(w, updatenums(w), data), np.array([[j + 5 * i <span class="py-keyword">for</span> j <span class="py-keyword">in</span> [1.4, 2.6]] <span class="py-keyword">for</span> i <span class="py-keyword">in</span> range(4)]), decimal=4)</pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>weights</code></strong> (2-dimensional NumPy array (N x K)) - Current responsibilities/point allocations in algorithm</li>
+        <li><strong class="pname"><code>nums</code></strong> (1-dimensional NumPy array (K)) - (Effective) number of points per component</li>
+        <li><strong class="pname"><code>data</code></strong> (2-dimensional NumPy array (d x N)) - Data from which parameters are being estimated</li>
+    </ul></dd>
+    <dt>Returns: 2-dimensional NumPy array (d x K)</dt>
+        <dd>The estimated means</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="updatecovs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">updatecovs</span>(<span class="sig-arg">weights</span>,
+        <span class="sig-arg">means</span>,
+        <span class="sig-arg">nums</span>,
+        <span class="sig-arg">data</span>,
+        <span class="sig-arg">diagcov</span>=<span class="sig-default">False</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Update estimates of covariance matrices in EM algorithm</p>
+  <p>Estimate the covariance matrices for each component of a GMM for 
+  <code>data</code>, given the current responsibilities and means. If 
+  <code>diagcov</code> is true, the returned matrices should be obtained 
+  via the usual update rule by setting the off-diagonal entries to 
+  zero.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>data = np.array([[ 0.3323902 ,  1.39952168],
+<span class="py-more">... </span>       [-3.09393968,  0.85202915],
+<span class="py-more">... </span>       [ 0.3932616 ,  4.14018981],
+<span class="py-more">... </span>       [ 2.71301182,  1.48606545],
+<span class="py-more">... </span>       [ 0.76624929,  1.48450185],
+<span class="py-more">... </span>       [-2.68682389, -2.20487651],
+<span class="py-more">... </span>       [-1.50746076, -1.3965284 ],
+<span class="py-more">... </span>       [-3.35436652, -2.70017904],
+<span class="py-more">... </span>       [ 0.62831278, -0.14266899],
+<span class="py-more">... </span>       [-3.13713063, -1.35515249]])
+<span class="py-prompt">&gt;&gt;&gt; </span>data = np.transpose(data)
+<span class="py-prompt">&gt;&gt;&gt; </span>w = np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2))
+<span class="py-prompt">&gt;&gt;&gt; </span>n = updatenums(w)
+<span class="py-prompt">&gt;&gt;&gt; </span>m = updatemeans(w, n, data)
+<span class="py-prompt">&gt;&gt;&gt; </span>c = updatecovs(w, m, n, data)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(c, np.array([[[ 3.33881418,  2.61431608], [ 2.61431608,  4.69524387]], [[ 4.32780425,  3.27144308], [ 3.27144308,  2.78110481]]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>c = updatecovs(w, m, n, data, diagcov=True)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(c, np.array([[[ 3.33881418,  0.], [ 0.,  4.69524387]], [[ 4.32780425,  0.], [ 0.,  2.78110481]]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>w = np.reshape(3 * [0.7, 0.3] + 4 * [0.2, 0.8] + 3 * [0.8, 0.2], (10, 2))
+<span class="py-prompt">&gt;&gt;&gt; </span>n = updatenums(w)
+<span class="py-prompt">&gt;&gt;&gt; </span>m = updatemeans(w, n, data)
+<span class="py-prompt">&gt;&gt;&gt; </span>c = updatecovs(w, m, n, data)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(c, np.array([[[ 3.70078013,  2.65039888], [ 2.65039888,  4.38797089]], [[ 4.23779562,  2.83814043], [ 2.83814043,  3.55031824]]]), decimal=4)</pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>weights</code></strong> (2-dimensional NumPy array (N x K)) - Current responsibilities in model</li>
+        <li><strong class="pname"><code>means</code></strong> (2-dimensional NumPy array (d x K)) - Current means in model</li>
+        <li><strong class="pname"><code>nums</code></strong> (1-dimensional NumPy array (K)) - Effective number of points per component</li>
+        <li><strong class="pname"><code>data</code></strong> (2-dimensional NumPy array (d x N)) - Data from which parameters are being estimated</li>
+        <li><strong class="pname"><code>diagcov</code></strong> (boolean) - Indicates whether the estimated covariance matrices should be 
+          constrained to be diagonal</li>
+    </ul></dd>
+    <dt>Returns: 3-dimensional NumPy array (K x d x d)</dt>
+        <dd>The estimated covariance matrices</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="nubskmeans"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">nubskmeans</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">K</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">reps</span>=<span class="sig-default">3</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Perform the K-means algorithm using non-uniform binary splitting 
+  (NUBS) for initialization of the means</p>
+  <p>Perform the K-means algorithm on the provided <code>data</code>, using
+  <code>K</code> means, where means are initialized using NUBS.  For each 
+  binary split performed, perform <code>reps</code> 2-class K-means fits, 
+  and use the one leading to the lowest distortion.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> (2-dimensional NumPy array (d x N)) - The data used to calculate the means</li>
+        <li><strong class="pname"><code>K</code></strong> (integer) - Number of means to be used</li>
+        <li><strong class="pname"><code>reps</code></strong> (integer) - number of 2-class K-means fits to perform per split</li>
+    </ul></dd>
+    <dt>Returns: tuple (2-dimensional NumPy array (d x K), 2-dimensional NumPy array 
+      (N x K))</dt>
+        <dd>(means returned by algorithm, allocation of points to means using
+          one-hot encoding)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="kmeans"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">kmeans</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">K</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">means</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">maxiters</span>=<span class="sig-default">30</span>,
+        <span class="sig-arg">rtol</span>=<span class="sig-default">0.0001</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Perform the K-means algorithm</p>
+  <p>Perform the K-means algorithm on the provided <code>data</code>, using
+  <code>K</code> means.  If <code>means</code> is specified, use these 
+  points to initialize the means in the algorithm, and infer 
+  <code>K</code>.  (If <code>means</code> is specified, the value assigned 
+  to <code>K</code> will be ignored.)  Otherwise, select the initial means 
+  by a random sample from the data points (without replacement).</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span>data = np.array(range(20)).reshape(4,5)
+<span class="py-prompt">&gt;&gt;&gt; </span>means = data[ :, :2]
+<span class="py-prompt">&gt;&gt;&gt; </span>m = data[ :, [0,3]]
+<span class="py-prompt">&gt;&gt;&gt; </span>means, labels = kmeans(data, means=m)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(means, np.array([[j + 5 * i <span class="py-keyword">for</span> j <span class="py-keyword">in</span> [0.5, 3]] <span class="py-keyword">for</span> i <span class="py-keyword">in</span> range(4)]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>m = data[ :, [1,4]]
+<span class="py-prompt">&gt;&gt;&gt; </span>means, labels = kmeans(data, means=m)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(means, np.array([[j + 5 * i <span class="py-keyword">for</span> j <span class="py-keyword">in</span> [1, 3.5]] <span class="py-keyword">for</span> i <span class="py-keyword">in</span> range(4)]), decimal=4)</pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> (2-dimensional NumPy array (d x N)) - The data used to calculate the means</li>
+        <li><strong class="pname"><code>K</code></strong> (integer) - Number of means to be used</li>
+        <li><strong class="pname"><code>means</code></strong> (2-dimensional NumPy array (d x K)) - Points to use for initializing means</li>
+        <li><strong class="pname"><code>maxiters</code></strong> (integer) - The maximum number of iterations of the K-means loop to be 
+          performed.  If this is reached, a warning is printed, and the 
+          last values calculated are returned</li>
+        <li><strong class="pname"><code>rtol</code></strong> (float) - Threshold on relative change in distortion over a K-means 
+          iteration below which convergence is assumed</li>
+    </ul></dd>
+    <dt>Returns: tuple (2-dimensional NumPy array (d x K), 2-dimensional NumPy array 
+      (N x K))</dt>
+        <dd>(means returned by algorithm, allocation of points to means using
+          one-hot encoding)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="gmm"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">gmm</span>(<span class="sig-arg">data</span>,
+        <span class="sig-arg">weights</span>=<span class="sig-default">None</span>,
+        <span class="sig-arg">K</span>=<span class="sig-default">1</span>,
+        <span class="sig-arg">hard</span>=<span class="sig-default">True</span>,
+        <span class="sig-arg">diagcov</span>=<span class="sig-default">False</span>,
+        <span class="sig-arg">maxiters</span>=<span class="sig-default">20</span>,
+        <span class="sig-arg">rtol</span>=<span class="sig-default">0.0001</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Perform parameter estimation for a Gaussian mixture model (GMM)</p>
+  <p>Perform parameter estimation for a GMM of <code>data</code> with 
+  <code>K</code> components using the expectation-maximization (EM) 
+  algorithm.  Initial class responsibilities are specified in 
+  <code>weights</code>.  If no initial class responsibilities are provided,
+  values should be obtained by running the NUBS K-means algorithm on 
+  <code>data</code>, using <code>K</code> components.</p>
+<pre class="py-doctest">
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># Data generated based on http://www.mathworks.com/help/toolbox/stats/bq_679x-24.html using</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># np.random.seed(5)</span>
+<span class="py-prompt">&gt;&gt;&gt; </span><span class="py-comment"># np.vstack([np.random.multivariate_normal([1, 2], [[3, .2], [.2, 2]], 5), np.random.multivariate_normal([-1, -2], [[2, 0], [0, 1]], 5)])</span>
+<span class="py-prompt">&gt;&gt;&gt; </span>data = np.array([[ 0.3323902 ,  1.39952168],
+<span class="py-more">... </span>       [-3.09393968,  0.85202915],
+<span class="py-more">... </span>       [ 0.3932616 ,  4.14018981],
+<span class="py-more">... </span>       [ 2.71301182,  1.48606545],
+<span class="py-more">... </span>       [ 0.76624929,  1.48450185],
+<span class="py-more">... </span>       [-2.68682389, -2.20487651],
+<span class="py-more">... </span>       [-1.50746076, -1.3965284 ],
+<span class="py-more">... </span>       [-3.35436652, -2.70017904],
+<span class="py-more">... </span>       [ 0.62831278, -0.14266899],
+<span class="py-more">... </span>       [-3.13713063, -1.35515249]])
+<span class="py-prompt">&gt;&gt;&gt; </span>data = np.transpose(data)
+<span class="py-prompt">&gt;&gt;&gt; </span>n, m, c, nll = gmm(data, weights=np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2)))
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(n, np.array([5, 5]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(m, np.array([[-0.94783384, -0.84146531], [1.304218 , -0.9916375 ]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(c, np.array([[[3.15487645, 2.20538737], [2.20538737, 3.07220946]], [[4.9916252, 3.37132928], [3.37132928, 2.28295183]]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(nll, 30.461793041351186, decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>n, m, c, nll = gmm(data, weights=np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2)), diagcov=True)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(n, np.array([8, 2]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(m, np.array([[-1.55321961,  1.73963056], [-0.1759581 ,  1.48528365]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(c, np.array([[[  2.68965903e+00,   0.00000000e+00], [  0.00000000e+00,   4.44220348e+00]], [[  9.47471087e-01,   0.00000000e+00], [  0.00000000e+00,   6.11211240e-07]]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(nll, 28.943272676612935, decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>n, m, c, nll = gmm(data, weights=np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2)), hard=False)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(n, np.array([5.11865545,  4.88134455]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(m, np.array([[-0.93462854, -0.85272701], [ 1.25697127, -0.99790135]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(c, np.array([[[ 3.16380585,  2.17689271], [ 2.17689271,  3.12725162]], [[ 5.02927041,  3.39900947], [ 3.39900947,  2.30303275]]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(nll, 30.358516118237446, decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>n, m, c, nll = gmm(data, weights=np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2)), hard=False, diagcov=True)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(n, np.array([ 4.99278276,  5.00721724]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(m, np.array([[-2.75771246,  0.96304258], [-1.36093232,  1.66913907]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(c, np.array([[[ 0.43464687,  0.], [ 0.,  1.48290904]], [[ 0.79499714,  0.], [ 0.,  1.91644595]]]), decimal=4)
+<span class="py-prompt">&gt;&gt;&gt; </span>npt.assert_almost_equal(nll, 35.224438294366749, decimal=4)</pre>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>data</code></strong> (2-dimensional NumPy array (d x N)) - The data used to estimate the parameters</li>
+        <li><strong class="pname"><code>weights</code></strong> (2-dimensional NumPy array (N x K)) - Initial responsibilities for each (class, data point) combination</li>
+        <li><strong class="pname"><code>K</code></strong> (integer) - Number of components for the GMM.  This should be ignored if 
+          <code>weights</code> is specified (in which case, the number of 
+          components is implicitly specified</li>
+        <li><strong class="pname"><code>hard</code></strong> (boolean) - Indicates whether hard or soft allocation of data points to 
+          components should be performed</li>
+        <li><strong class="pname"><code>diagcov</code></strong> (boolean) - Indicates whether the covariance matrix should be restricted to 
+          be diagonal or not</li>
+        <li><strong class="pname"><code>maxiters</code></strong> (integer) - The maximum number of iterations of the EM loop to be performed.
+          If this is reached, a warning is printed, and the parameters of 
+          the current model are returned</li>
+        <li><strong class="pname"><code>rtol</code></strong> (float) - Threshold on relative change in negative log-likelihood (NLL) 
+          over an EM iteration below which convergence is assumed</li>
+    </ul></dd>
+    <dt>Returns: tuple ( 1-dimensional NumPy array (K), 2-dimensional NumPy array (d x
+      K), 3-dimensional NumPy array (K x d x d, float)</dt>
+        <dd>(effective number of points per component, means of each 
+          component, covariance matrices of each component, NLL of 
+          parameters returned )</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+  <!-- Home link -->
+      <th bgcolor="#70b0f0" class="navbar-select"
+          >&nbsp;&nbsp;&nbsp;Home&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+      <th class="navbar" width="100%"></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1 on Fri Apr  5 15:04:03 2013
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>
