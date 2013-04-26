@@ -11,7 +11,6 @@ from heapq import heappush, heappop
 
 import numpy as np
 import numpy.testing as npt
-import time
 
 class EmptyComponentError(Exception):
     '''Error when number of points associated with a GMM/K-Means component reaches zero'''
@@ -99,7 +98,6 @@ def calcresps(data, nums, means, covs, hard=True):
     K = means.shape[1]
     N = data.shape[1]
     R = np.zeros((N,K))
-    
     Z = np.log((2*np.pi)**means.shape[0])
     
     for k in xrange(K):
@@ -118,6 +116,7 @@ def calcresps(data, nums, means, covs, hard=True):
         S = np.sum(R,axis=1)
         R = (R.T/S).T
     
+    #N = np.sum(nums)
     nll = -np.sum( np.log(S) ) + N*np.log(N) 
     return R, nll
 

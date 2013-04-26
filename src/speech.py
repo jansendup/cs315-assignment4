@@ -15,14 +15,11 @@ def snll(data, nums, means, covs):
 
 def normalize(dic):
     data = list()
-    Nk = list()
+    
     for v in dic['train']:
-        N = 0
         for s in dic['train'][v]:
             data = data + list(s)
-            N += s.shape[0]
-        Nk.append(N)
-    Nk = np.array(Nk,dtype=np.float)/np.sum(Nk)
+            
     data = np.array(data)
     mean = np.mean(data,axis=0)
     std = np.std(data,axis=0)
@@ -31,14 +28,23 @@ def normalize(dic):
         for v in dic[x]:
             for i in xrange(len(dic[x][v])):
                 dic[x][v][i] = ((dic[x][v][i] - mean)/std).T
-
+#def priors(dic):
+#    pr = {}
+#    N = 0.0
+#    for v in dic:
+#        pr[v] = 0.0
+#        for s in dic[v]:
+#            pr[v] += s.shape[0]
+#        N += pr[v]
+#    return pr/N
+     
 def pack(x):
     l = list()
     for p in x:
         l += list(p.T)
     return np.array(l).T
 
-def doit(dic,classes,K,diag):
+def doit(dic,priors,classes,K,diag):
     err = {'train':list(), 'test':list()}
     for k in K:
         nums, means, covs, nll  = {},{},{},{}
@@ -77,12 +83,13 @@ if __name__ == '__main__':
     K = range(1,6+1)
     dic = pickle.load(open('../data/speech.dat','r'))
     normalize(dic)
+#    priors = priors(dic['test'])
     classes = dic['train'].keys()
     
     pl.figure()
     pl.hold(True)
-    doit(dic, classes, K, False)
-    doit(dic, classes, K, True)
+    doit(dic, 0, classes, K, False)
+    doit(dic, 0, classes, K, True)
     pl.legend(loc='best')
     pl.title('Classification error rate vs K')
     pl.xlabel('K')
