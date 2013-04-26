@@ -141,7 +141,7 @@ def updatenums(weights):
     '''
     s = np.sum(weights,axis=0);
     if ( s*s < 1e-6 ).any():
-        raise EmptyComponentError();
+        raise EmptyComponentError('Zero effective number of points for each component of a GMM');
     return s
 
 def updatemeans(weights, nums, data):
@@ -404,12 +404,14 @@ def gmm(data, weights=None, K=1, hard=True, diagcov=False, maxiters=20, rtol=1e-
     for i in xrange(maxiters):
         weights,nll = calcresps(data, nums, means, covs, hard)
         
+        try:
+            nums_new = updatenums(weights)
+        except:
+            break
+        
         covs = updatecovs(weights, means, nums, data, diagcov)
         means = updatemeans(weights,nums,data)
-        nums = updatenums(weights)
-        
-        #if(hard and diagcov):
-            #print nums, nll
+        nums = nums_new
         
         if( i != 0 ):
             if(np.abs((nll-nll_pre)/nll_pre) < rtol):
