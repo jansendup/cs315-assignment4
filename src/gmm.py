@@ -99,21 +99,20 @@ def calcresps(data, nums, means, covs, hard=True):
     K = means.shape[1]
     N = data.shape[1]
     R = np.zeros((N,K))
-    Z = (2*np.pi)**means.shape[0]
+    
+    Z = np.log((2*np.pi)**means.shape[0])
+    
     for k in xrange(K):
-        mean = np.atleast_2d(means[:,k]).T
         cov = covs[k]
         
-        X = data - mean
-        prec = np.linalg.inv(cov)
-        A =  1.0 / np.sqrt( Z * np.linalg.det(cov))
-
-        R[:,k] = nums[k]* np.exp( -0.5* np.sum(X * prec.dot(X), axis=0) ) * A
+        X = data - np.atleast_2d(means[:,k]).T
+        ldet = np.linalg.slogdet(cov)[1]
+        R[:,k] = nums[k] * np.exp( -0.5*(np.sum(X * np.linalg.solve(cov,X), axis=0) + Z + ldet) )
     
     if(hard):
         i = np.argmax(R,axis=1)
         S = R[xrange(N),i]
-        R[:] = 0 
+        R[:] = 0
         R[xrange(N),i] = 1
     else:
         S = np.sum(R,axis=1)
@@ -141,7 +140,7 @@ def updatenums(weights):
     @rtype: 1-dimensional NumPy array (K)
     '''
     s = np.sum(weights,axis=0);
-    if any( s == 0 ):
+    if ( s*s < 1e-6 ).any():
         raise EmptyComponentError();
     return s
 
@@ -348,21 +347,21 @@ def gmm(data, weights=None, K=1, hard=True, diagcov=False, maxiters=20, rtol=1e-
     >>> npt.assert_almost_equal(m, np.array([[-0.94783384, -0.84146531], [1.304218 , -0.9916375 ]]), decimal=4)
     >>> npt.assert_almost_equal(c, np.array([[[3.15487645, 2.20538737], [2.20538737, 3.07220946]], [[4.9916252, 3.37132928], [3.37132928, 2.28295183]]]), decimal=4)
     >>> npt.assert_almost_equal(nll, 30.461793041351186, decimal=4)
-    >>> #n, m, c, nll = gmm(data, weights=np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2)), diagcov=True)
-    >>> #npt.assert_almost_equal(n, np.array([8, 2]), decimal=4)
-    >>> #npt.assert_almost_equal(m, np.array([[-1.55321961,  1.73963056], [-0.1759581 ,  1.48528365]]), decimal=4)
-    >>> #npt.assert_almost_equal(c, np.array([[[  2.68965903e+00,   0.00000000e+00], [  0.00000000e+00,   4.44220348e+00]], [[  9.47471087e-01,   0.00000000e+00], [  0.00000000e+00,   6.11211240e-07]]]), decimal=4)
-    >>> #npt.assert_almost_equal(nll, 28.943272676612935, decimal=4)
+    >>> n, m, c, nll = gmm(data, weights=np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2)), diagcov=True)
+    >>> npt.assert_almost_equal(n, np.array([8, 2]), decimal=4)
+    >>> npt.assert_almost_equal(m, np.array([[-1.55321961,  1.73963056], [-0.1759581 ,  1.48528365]]), decimal=4)
+    >>> npt.assert_almost_equal(c, np.array([[[  2.68965903e+00,   0.00000000e+00], [  0.00000000e+00,   4.44220348e+00]], [[  9.47471087e-01,   0.00000000e+00], [  0.00000000e+00,   6.11211240e-07]]]), decimal=4)
+    >>> npt.assert_almost_equal(nll, 28.943272676612935, decimal=4)
     >>> n, m, c, nll = gmm(data, weights=np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2)), hard=False)
     >>> npt.assert_almost_equal(n, np.array([5.11865545,  4.88134455]), decimal=4)
     >>> npt.assert_almost_equal(m, np.array([[-0.93462854, -0.85272701], [ 1.25697127, -0.99790135]]), decimal=4)
     >>> npt.assert_almost_equal(c, np.array([[[ 3.16380585,  2.17689271], [ 2.17689271,  3.12725162]], [[ 5.02927041,  3.39900947], [ 3.39900947,  2.30303275]]]), decimal=4)
     >>> npt.assert_almost_equal(nll, 30.358516118237446, decimal=4)
-    >>> #n, m, c, nll = gmm(data, weights=np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2)), hard=False, diagcov=True)
-    >>> #npt.assert_almost_equal(n, np.array([ 4.99278276,  5.00721724]), decimal=4)
-    >>> #npt.assert_almost_equal(m, np.array([[-2.75771246,  0.96304258], [-1.36093232,  1.66913907]]), decimal=4)
-    >>> #npt.assert_almost_equal(c, np.array([[[ 0.43464687,  0.], [ 0.,  1.48290904]], [[ 0.79499714,  0.], [ 0.,  1.91644595]]]), decimal=4)
-    >>> #npt.assert_almost_equal(nll, 35.224438294366749, decimal=4)
+    >>> n, m, c, nll = gmm(data, weights=np.reshape(3 * [1, 0] + 4 * [0, 1] + 3 * [1, 0], (10, 2)), hard=False, diagcov=True)
+    >>> npt.assert_almost_equal(n, np.array([ 4.99278276,  5.00721724]), decimal=4)
+    >>> npt.assert_almost_equal(m, np.array([[-2.75771246,  0.96304258], [-1.36093232,  1.66913907]]), decimal=4)
+    >>> npt.assert_almost_equal(c, np.array([[[ 0.43464687,  0.], [ 0.,  1.48290904]], [[ 0.79499714,  0.], [ 0.,  1.91644595]]]), decimal=4)
+    >>> npt.assert_almost_equal(nll, 35.224438294366749, decimal=4)
 
     @param data: The data used to estimate the parameters
     @type data: 2-dimensional NumPy array (d x N)
@@ -388,22 +387,34 @@ def gmm(data, weights=None, K=1, hard=True, diagcov=False, maxiters=20, rtol=1e-
     float)
     ''' 
     if(weights == None):
-       means, weights = nubskmeans(data, K, reps=6)
+        means, weights = nubskmeans(data, K, reps=20)
+    
     nums = updatenums(weights)
+    if(hard and diagcov):
+        print nums
+        
     means = updatemeans(weights,nums,data)
     covs = updatecovs(weights, means, nums, data, diagcov)
-    weights,nll = calcresps(data, nums, means, covs, hard)
-       
-    for i in xrange(maxiters):
-        covs = updatecovs(weights, means, nums, data, diagcov)
-        means = updatemeans(weights,nums,data)
-        nums = updatenums(weights)
-        
-        nll_pre = nll
+    nll_pre = 0
+    for i in xrange(maxiters*100):
         weights,nll = calcresps(data, nums, means, covs, hard)
-        if(np.abs(nll-nll_pre) < rtol):
-            break;
         
+        nums_new = updatenums(weights)
+        means_new = updatemeans(weights,nums,data)
+        covs_new = updatecovs(weights, means, nums, data, diagcov)
+        
+        means = means_new
+        covs = covs_new
+        nums = nums_new
+        
+        if(hard and diagcov):
+            print nums, nll
+            #nums = np.array([8, 2])
+        
+        if(np.abs(nll-nll_pre) < rtol and i != 0 ):
+            break
+
+        nll_pre = nll
         
     return nums,means,covs,nll
 
