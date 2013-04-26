@@ -387,32 +387,33 @@ def gmm(data, weights=None, K=1, hard=True, diagcov=False, maxiters=20, rtol=1e-
     float)
     ''' 
     if(weights == None):
-        means, weights = nubskmeans(data, K, reps=20)
+        means, weights = nubskmeans(data, K, reps=3)
     
     nums = updatenums(weights)
-    if(hard and diagcov):
-        print nums
-        
+    
     means = updatemeans(weights,nums,data)
     covs = updatecovs(weights, means, nums, data, diagcov)
+    
+    #if(hard and diagcov):
+        #nums = np.array([8, 2])
+        #means = np.array([[-1.55321961,  1.73963056], [-0.1759581 ,  1.48528365]])
+        #covs = np.array([[[  2.68965903e+00,   0.00000000e+00], [  0.00000000e+00,   4.44220348e+00]], [[  9.47471087e-01,   0.00000000e+00], [  0.00000000e+00,   6.11211240e-07]]])
+        
+    
     nll_pre = 0
-    for i in xrange(maxiters*100):
+    for i in xrange(maxiters):
         weights,nll = calcresps(data, nums, means, covs, hard)
         
-        nums_new = updatenums(weights)
-        means_new = updatemeans(weights,nums,data)
-        covs_new = updatecovs(weights, means, nums, data, diagcov)
+        covs = updatecovs(weights, means, nums, data, diagcov)
+        means = updatemeans(weights,nums,data)
+        nums = updatenums(weights)
         
-        means = means_new
-        covs = covs_new
-        nums = nums_new
+        #if(hard and diagcov):
+            #print nums, nll
         
-        if(hard and diagcov):
-            print nums, nll
-            #nums = np.array([8, 2])
-        
-        if(np.abs(nll-nll_pre) < rtol and i != 0 ):
-            break
+        if( i != 0 ):
+            if(np.abs((nll-nll_pre)/nll_pre) < rtol):
+                break
 
         nll_pre = nll
         
