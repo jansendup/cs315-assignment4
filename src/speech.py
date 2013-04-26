@@ -46,7 +46,7 @@ def doit(dic,classes,K,diag):
         # Build GMM models
         for dif in dic['train']:
             data = pack(dic['train'][dif])
-            for i in xrange(4):
+            for i in xrange(6):
                 _nums,_means,_covs,_nll = gmm.gmm(data, weights=None, K=k, hard=True, diagcov=diag)
                 if(i != 0):
                     if(_nll > nll[dif]):
@@ -70,7 +70,8 @@ def doit(dic,classes,K,diag):
             utils.confusion(labels, labels_est, True)
             print '% Error: ', e,'\n'
     
-    pl.plot(K,err['train'])
+    pl.plot(K,err['train'],'--', label= 'Train'+(' (Diag)' if diag else ''))
+    pl.plot(K,err['test'], label= 'Test'+(' (Diag)' if diag else ''))
 
 if __name__ == '__main__':
     K = range(1,6+1)
@@ -78,10 +79,16 @@ if __name__ == '__main__':
     normalize(dic)
     classes = dic['train'].keys()
     
+    pl.figure()
+    pl.hold(True)
     doit(dic, classes, K, False)
     doit(dic, classes, K, True)
-    
+    pl.legend(loc='best')
+    pl.title('Classification error rate vs K')
+    pl.xlabel('K')
+    pl.ylabel('% Error')
     pl.show()
+    
     pass
     
     

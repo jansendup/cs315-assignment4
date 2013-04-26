@@ -328,7 +328,7 @@ class LDA:
             self.classmeans[:,i] = np.sum(B,axis=1)/n
             sbCalc[:,i] = (self.classmeans[:,i] - mean) * np.sqrt(p)
         
-        self.pca1 = PCA(self.aveclasscov, 1.0, False, False, True, tol=0.1e-4)
+        self.pca1 = PCA(self.aveclasscov, 1.0, False, False, True, tol=0.1e-5)
         self.pca2 = PCA(self.pca1.transform(sbCalc, True), 1.0, False, False, False )
         self.W = self.pca2.transform(self.pca1.transform(np.eye(self.d),True)).T
 
