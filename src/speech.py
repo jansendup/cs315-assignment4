@@ -10,8 +10,8 @@ import gmm
 from classifiers import optcriterion
 import matplotlib.pyplot as pl
 
-def snll(data, nums, means, covs):
-    return gmm.calcresps(data, nums, means, covs, True)[1]
+def snll(data, nums, means, covs, prior):
+    return gmm.calcresps(data, nums, means, covs, True)[1] - np.log(prior)
 
 def normalize(dic):
     data = list()
@@ -28,15 +28,17 @@ def normalize(dic):
         for v in dic[x]:
             for i in xrange(len(dic[x][v])):
                 dic[x][v][i] = ((dic[x][v][i] - mean)/std).T
-#def priors(dic):
-#    pr = {}
-#    N = 0.0
-#    for v in dic:
-#        pr[v] = 0.0
-#        for s in dic[v]:
-#            pr[v] += s.shape[0]
-#        N += pr[v]
-#    return pr/N
+def priors(dic):
+    pr = {}
+    N = 0.0
+    for v in dic:
+        pr[v] = 0.0
+        for s in dic[v]:
+            pr[v] += s.shape[0]
+        N += pr[v]
+    for v in dic:
+        pr[v]/=N
+    return pr
      
 def pack(x):
     l = list()
@@ -48,7 +50,6 @@ def doit(dic,priors,classes,K,diag):
     err = {'train':list(), 'test':list()}
     for k in K:
         nums, means, covs, nll  = {},{},{},{}
-        numsd, meansd, covsd, nlld  = {},{},{},{}
         # Build GMM models
         for dif in dic['train']:
             data = pack(dic['train'][dif])
@@ -60,7 +61,7 @@ def doit(dic,priors,classes,K,diag):
                 nums[dif],means[dif],covs[dif],nll[dif] =  _nums,_means,_covs,_nll
         
         criteria = [snll for dif in dic['train']]
-        kwparams = [{'nums':nums[dif], 'means':means[dif], 'covs':covs[dif]} for dif in dic['train']]
+        kwparams = [{'nums':nums[dif], 'means':means[dif], 'covs':covs[dif], 'prior':priors[dif]} for dif in dic['train']]
         
         # Evaluate
         for x in dic:
@@ -83,13 +84,13 @@ if __name__ == '__main__':
     K = range(1,6+1)
     dic = pickle.load(open('../data/speech.dat','r'))
     normalize(dic)
-#    priors = priors(dic['test'])
+    priors = priors(dic['test'])
     classes = dic['train'].keys()
     
     pl.figure()
     pl.hold(True)
-    doit(dic, 0, classes, K, False)
-    doit(dic, 0, classes, K, True)
+    doit(dic, priors, classes, K, False)
+    doit(dic, priors, classes, K, True)
     pl.legend(loc='best')
     pl.title('Classification error rate vs K')
     pl.xlabel('K')
