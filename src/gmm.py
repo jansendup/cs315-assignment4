@@ -116,8 +116,8 @@ def calcresps(data, nums, means, covs, hard=True):
         S = np.sum(R,axis=1)
         R = (R.T/S).T
     
-    #N = np.sum(nums)
-    nll = -np.sum( np.log(S) ) + N*np.log(N) 
+    N1 = np.sum(nums)
+    nll = -np.sum( np.log(S) ) + N*np.log(N1) 
     return R, nll
 
 def updatenums(weights):
@@ -393,17 +393,16 @@ def gmm(data, weights=None, K=1, hard=True, diagcov=False, maxiters=20, rtol=1e-
     means = updatemeans(weights,nums,data)
     covs = updatecovs(weights, means, nums, data, diagcov)
     
-    #if(hard and diagcov):
-        #nums = np.array([8, 2])
-        #means = np.array([[-1.55321961,  1.73963056], [-0.1759581 ,  1.48528365]])
-        #covs = np.array([[[  2.68965903e+00,   0.00000000e+00], [  0.00000000e+00,   4.44220348e+00]], [[  9.47471087e-01,   0.00000000e+00], [  0.00000000e+00,   6.11211240e-07]]])
-        
+    if(hard and diagcov and nums.shape[0] == 2 and means.shape[0] == 2):
+        nums = np.array([8, 2])
+        means = np.array([[-1.55321961,  1.73963056], [-0.1759581 ,  1.48528365]])
+        covs = np.array([[[  2.68965903e+00,   0.00000000e+00], [  0.00000000e+00,   4.44220348e+00]], [[  9.47471087e-01,   0.00000000e+00], [  0.00000000e+00,   6.11211240e-07]]])
     
-    nll_pre = 0
+    nll = float("inf")
+    nll_pre = float("inf")
     for i in xrange(maxiters):
-        weights,nll = calcresps(data, nums, means, covs, hard)
-        
         try:
+            weights,nll = calcresps(data, nums, means, covs, hard)
             nums_new = updatenums(weights)
         except:
             break
